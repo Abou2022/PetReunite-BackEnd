@@ -4,7 +4,10 @@
   "description": "🌍 Building innovative solutions to reunite pets with their owners worldwide. 📱 Mobile app and web developer dedicated to making a positive impact on the pet-loving community. 💻 Open-source enthusiast | Coding for a cause | Advancing pet welfare.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "resetdb": "mysql -u root -p <  ./db/schema.sql",
+    "seed": "node seeds/index.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
