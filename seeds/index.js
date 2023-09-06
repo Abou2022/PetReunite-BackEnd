@@ -36,6 +36,7 @@ const furry = [
     furryDescription: "Friendly dog",
     animal: "Dog",
     color: "Brown",
+    breed: "",
     particularSign: "None",
     lastLocation: "Park",
     lastTime: "2023-09-05 10:00:00", // Provide a valid date and time

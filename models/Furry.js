@@ -1,0 +1,68 @@
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+
+class Furry extends Model {}
+
+Furry.init(
+  {
+    // add properites here, ex:
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    furryDescription: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    animal: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    breed: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    particularSign: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastLocation: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastTime: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    currentStatus: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    picture: {
+      type: DataTypes.STRING,
+      //or type: Sequelize.BLOB -- allow null?
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "users",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+  }
+);
+
+module.exports = Furry;
