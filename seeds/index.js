@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { User, Furry } = require("../models");
+
 const sequelize = require("../config/connection");
 
 const users = [
@@ -32,63 +33,27 @@ const users = [
 const furry = [
   {
     name: "Rex",
-    furryDescription: "",
-    animal: "",
-    color: "",
-    paricularSign: "",
-    lastLocation: "",
-    lastTime: "",
-    currentStatus: "",
-    user_id: "",
-    picture: "",
+    furryDescription: "Friendly dog",
+    animal: "Dog",
+    color: "Brown",
+    particularSign: "None",
+    lastLocation: "Park",
+    lastTime: "2023-09-05 10:00:00", // Provide a valid date and time
+    currentStatus: "Lost",
+    user_id: 1, // This should be a valid user_id
+    picture: "rex.jpg",
   },
   {
-    name: "",
-    furryDescription: "",
-    animal: "",
-    color: "",
-    paricularSign: "",
-    lastLocation: "",
-    lastTime: "",
-    currentStatus: "",
-    user_id: "",
-    picture: "",
-  },
-  {
-    name: "",
-    furryDescription: "",
-    animal: "",
-    color: "",
-    paricularSign: "",
-    lastLocation: "",
-    lastTime: "",
-    currentStatus: "",
-    user_id: "",
-    picture: "",
-  },
-  {
-    name: "",
-    furryDescription: "",
-    animal: "",
-    color: "",
-    paricularSign: "",
-    lastLocation: "",
-    lastTime: "",
-    currentStatus: "",
-    user_id: "",
-    picture: "",
-  },
-  {
-    name: "",
-    furryDescription: "",
-    animal: "",
-    color: "",
-    paricularSign: "",
-    lastLocation: "",
-    lastTime: "",
-    currentStatus: "",
-    user_id: "",
-    picture: "",
+    name: "Milow",
+    furryDescription: "Friendly cat",
+    animal: "Cat",
+    color: "white",
+    particularSign: "None",
+    lastLocation: "Parking",
+    lastTime: "2023-09-05 10:00:00", // Provide a valid date and time
+    currentStatus: "Lost",
+    user_id: 1, // This should be a valid user_id
+    picture: "milow.jpg",
   },
 ];
 
@@ -98,7 +63,7 @@ const feedMe = async () => {
     await User.bulkCreate(users, {
       individualHooks: true,
     });
-    await Pet.bulkCreate(pets);
+    await Furry.bulkCreate(furry);
     process.exit(0);
   } catch (err) {
     console.log(err);
