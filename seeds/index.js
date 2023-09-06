@@ -31,7 +31,7 @@ const users = [
 
 const furry = [
   {
-    name: "",
+    name: "Rex",
     furryDescription: "",
     animal: "",
     color: "",
