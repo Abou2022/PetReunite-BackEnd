@@ -39,8 +39,9 @@ const furry = [
     breed: "pure",
     particularSign: "None",
     lastLocation: "Park",
-    lastTime: "2023-09-05 10:00:00", // Provide a valid date and time
-    currentStatus: "Lost",
+    lastDay: "2023-09-05 ", // Provide a valid date and time
+    lastTime: "10:00:00", // Provide a valid date and time
+    currentStatus: false,
     user_id: 1, // This should be a valid user_id
     picture: "rex.jpg",
   },
@@ -49,10 +50,12 @@ const furry = [
     furryDescription: "Friendly cat",
     animal: "Cat",
     color: "white",
+    breed: "not pure",
     particularSign: "None",
     lastLocation: "Parking",
-    lastTime: "2023-09-05 10:00:00", // Provide a valid date and time
-    currentStatus: "Lost",
+    lastDay: "2023-09-05 ", // Provide a valid date and time
+    lastTime: "11:00:00", // Provide a valid date and time
+    currentStatus: true,
     user_id: 1, // This should be a valid user_id
     picture: "milow.jpg",
   },

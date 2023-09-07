@@ -40,8 +40,12 @@ Furry.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    lastDay: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     lastTime: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     currentStatus: {
