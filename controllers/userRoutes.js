@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User, Furry } = require("../models/");
+const { User } = require("../models/");
 const bcrypt = require("bcrypt");
 
 // find all
@@ -64,7 +64,7 @@ router.post("/login", (req, res) => {
       if (bcrypt.compareSync(req.body.password, foundUser.password)) {
         req.session.user = {
           id: foundUser.id,
-          username: foundUser.username,
+          user_FirstName: foundUser.user_FirstName,
         };
         console.log(req.session.user, "********");
         return res.json(foundUser);
