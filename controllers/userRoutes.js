@@ -11,15 +11,17 @@ router.get("/", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ msg: "an error occured", err });
+      res
+        .status(500)
+        .json({ msg: "An error occurred while fetching data", err });
     });
 });
 
 // logout
-router.get("/logout", (req, res) => {
-  req.session.destroy();
-  res.redirect("/home");
-});
+// router.get("/logout", (req, res) => {
+//   req.session.destroy();
+//   res.redirect("/home");
+// });
 
 // find one
 router.get("/:id", (req, res) => {

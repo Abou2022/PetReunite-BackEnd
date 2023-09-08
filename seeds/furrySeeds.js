@@ -28,7 +28,21 @@ const furry = [
     lastDay: "2023-09-05 ", // Provide a valid date and time
     lastTime: "11:00:00", // Provide a valid date and time
     currentStatus: true,
-    user_id: 1, // This should be a valid user_id
+    user_id: 2, // This should be a valid user_id
+    picture: "milow.jpg",
+  },
+  {
+    name: "Piglon",
+    furryDescription: "Friendly Bonny",
+    animal: "Bonny",
+    color: "white gray",
+    breed: "not pure",
+    particularSign: "None",
+    lastLocation: "South Park",
+    lastDay: "2023-09-06 ", // Provide a valid date and time
+    lastTime: "09:00:00", // Provide a valid date and time
+    currentStatus: true,
+    user_id: 3, // This should be a valid user_id
     picture: "milow.jpg",
   },
 ];
