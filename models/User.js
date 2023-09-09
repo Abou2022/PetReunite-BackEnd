@@ -40,9 +40,9 @@ User.init(
   },
   {
     hooks: {
-      beforeCreate: async (userdata) => {
-        userdata.password = await bcrypt.hash(userdata.password, 5);
-        return userdata;
+      beforeCreate: async (userData) => {
+        userData.password = await bcrypt.hash(userData.password, 5);
+        return userData;
       },
     },
     sequelize,
