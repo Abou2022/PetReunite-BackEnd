@@ -7,7 +7,7 @@ router.use("/api/users", userRoutes);
 const furryRoutes = require("./furryRoutes");
 router.use("/api/furry", furryRoutes);
 
-router.get("/showsessions", (req, res) => {
+router.get("/sessions", (req, res) => {
   res.json(req.session);
 });
 
