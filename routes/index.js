@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const userRoutes = require("./userRoutes");
+const userRoutes = require("./api/userRoutes");
 router.use("/api/users", userRoutes);
 
-const furryRoutes = require("./furryRoutes");
+const furryRoutes = require("./api/furryRoutes");
 router.use("/api/furry", furryRoutes);
 
 router.get("/sessions", (req, res) => {
