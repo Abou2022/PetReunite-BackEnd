@@ -1,8 +1,8 @@
-"use strict";
+// "use strict";
 
 const { Furry } = require("../models");
 
-const furry = [
+const furryData = [
   {
     name: "Rex",
     furryDescription: "Friendly dog",
@@ -15,7 +15,7 @@ const furry = [
     lastTime: "10:00:00", // Provide a valid date and time
     currentStatus: false,
     user_id: 1, // This should be a valid user_id
-    picture: "rex.jpg",
+    // picture: "rex.jpg",
   },
   {
     name: "Milow",
@@ -29,7 +29,7 @@ const furry = [
     lastTime: "11:00:00", // Provide a valid date and time
     currentStatus: true,
     user_id: 2, // This should be a valid user_id
-    picture: "milow.jpg",
+    // picture: "milow.jpg",
   },
   {
     name: "Piglon",
@@ -43,7 +43,7 @@ const furry = [
     lastTime: "09:00:00", // Provide a valid date and time
     currentStatus: true,
     user_id: 3, // This should be a valid user_id
-    picture: "milow.jpg",
+    // picture: "milow.jpg",
   },
   {
     name: "Bly",
@@ -57,9 +57,9 @@ const furry = [
     lastTime: "09:00:00", // Provide a valid date and time
     currentStatus: true,
     user_id: 4, // This should be a valid user_id
-    picture: "milow.jpg",
+    // picture: "milow.jpg",
   },
 ];
 
-const seedFurry = () => Furry.bulkCreate(furry, { individualHooks: true });
+const seedFurry = () => Furry.bulkCreate(furryData);
 module.exports = seedFurry;

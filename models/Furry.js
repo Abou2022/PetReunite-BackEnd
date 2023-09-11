@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connection.js");
 
 class Furry extends Model {}
 
@@ -52,10 +52,10 @@ Furry.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    picture: {
-      type: DataTypes.STRING,
-      //or type: Sequelize.BLOB -- allow null?
-    },
+    // picture: {
+    //   type: DataTypes.STRING,
+    //   //or type: Sequelize.BLOB -- allow null?
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -66,6 +66,10 @@ Furry.init(
   },
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "furry",
   }
 );
 
