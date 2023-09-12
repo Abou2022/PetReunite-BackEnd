@@ -66,10 +66,10 @@ Furry.init(
   },
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "furry",
+    // timestamps: false,
+    // freezeTableName: true,
+    // underscored: true,
+    // modelName: "furry",
   }
 );
 

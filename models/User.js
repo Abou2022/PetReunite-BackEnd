@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 class User extends Model {}
 
@@ -12,15 +12,13 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_FirstName: {
+    userFirstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
-    user_LastName: {
+    userLastName: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -39,17 +37,13 @@ User.init(
     },
   },
   {
-    // hooks: {
-    //   beforeCreate: async (userData) => {
-    //     userData.password = await bcrypt.hash(userData.password, 5);
-    //     return userData;
-    //   },
-    // },
+    hooks: {
+      beforeCreate: async (userData) => {
+        userData.password = await bcrypt.hash(userData.password, 10); // Use a higher bcrypt salt round (e.g., 10)
+        return userData;
+      },
+    },
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "User",
   }
 );
 

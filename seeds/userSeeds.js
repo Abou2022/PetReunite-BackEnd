@@ -4,26 +4,26 @@ const { User } = require("../models");
 
 const users = [
   {
-    user_FirstName: "Alicia",
-    user_LastName: "Key",
+    userFirstName: "Alicia",
+    userLastName: "Key",
     email: "alicia@pet.com",
     password: "12345",
   },
   {
-    user_FirstName: "Chris",
-    user_LastName: "Brown",
+    userFirstName: "Chris",
+    userLastName: "Brown",
     email: "chris@pet.com",
     password: "12345",
   },
   {
-    user_FirstName: "Isabelle",
-    user_LastName: "Perez",
+    userFirstName: "Isabelle",
+    userLastName: "Perez",
     email: "isabelle@pet.com",
     password: "12345",
   },
   {
-    user_FirstName: "Joel",
-    user_LastName: "Same",
+    userFirstName: "Joel",
+    userLastName: "Same",
     email: "joel@pet.com",
     password: "12345",
   },
