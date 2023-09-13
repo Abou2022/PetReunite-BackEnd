@@ -68,13 +68,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ msg: "an error occurred", err });
   }
 });
-
-// logout
-// router.get("/logout", (req,res)=>{
-//   req.session.destroy();
-//   res.redirect("/home")
-// })
-//LogOut
+//logout
 router.get("/logout", async (req, res) => {
   try {
     await req.session.destroy();
@@ -82,6 +76,37 @@ router.get("/logout", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "an error occured", err });
+  }
+});
+
+// Login route
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Check if the user with the provided email exists in the database
+    const user = await User.findOne({ where: { email } });
+    // If the user does not exist, return an error
+    if (!user) {
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+    // Compare the provided password with the hashed password in the database
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    // If passwords do not match, return an error
+    if (!passwordMatch) {
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+    // If authentication is successful, you can create a session or generate a token
+    // For a session-based approach:
+    req.session.user = {
+      id: user.id,
+      email: user.email,
+      // Add any other user-related information you want to store in the session
+    };
+    res.json({ message: "Login successful", user });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "An error occurred" });
   }
 });
 
