@@ -5,18 +5,6 @@ const bcrypt = require("bcrypt");
 
 const router = require("express").Router();
 
-//Get All
-// router.get("/", async (req, res) => {
-//   try {
-//     const userData = await User.findAll();
-//     console.log(userData);
-
-//     res.status(200).json(userData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-// Find all users
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({ include: { all: true } });
@@ -28,6 +16,17 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.error("Error: ", err);
     res.status(500).json({ msg: "An error occurred", error: err.message });
+  }
+});
+
+//find One
+router.get("/:id", async (req, res) => {
+  try {
+    const dbUsers = await User.findByPk(req.params.id, {});
+    res.json(dbUsers);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "an error occurred", err });
   }
 });
 //Create a user
@@ -43,10 +42,15 @@ router.post("/", async (req, res) => {
 //Update a user
 router.put("/:id", async (req, res) => {
   try {
-    const userData = await User.update(req.body);
-    res.status(200).json(userData);
+    const updatedUsers = await User.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json(updatedUsers);
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err);
+    res.status(500).json({ msg: "an error occurred", err });
   }
 });
 
