@@ -69,4 +69,20 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// logout
+// router.get("/logout", (req,res)=>{
+//   req.session.destroy();
+//   res.redirect("/home")
+// })
+//LogOut
+router.get("/logout", async (req, res) => {
+  try {
+    await req.session.destroy();
+    res.redirect("/home");
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "an error occured", err });
+  }
+});
+
 module.exports = router;
