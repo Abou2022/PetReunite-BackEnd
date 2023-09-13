@@ -57,18 +57,15 @@ router.put("/:id", async (req, res) => {
 //Delete a User
 router.delete("/:id", async (req, res) => {
   try {
-    const userData = await User.destroy({
+    const deUsers = await User.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if (!userData) {
-      res.status(404).json({ message: "No user found with this data" });
-      return;
-    }
-    res.status(200).json(userData);
+    res.status(deUsers);
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500).json({ msg: "an error occurred", err });
   }
 });
 
