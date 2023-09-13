@@ -1,33 +1,20 @@
 // const express = require("express");
 const router = require("express").Router();
 const { Furry, User } = require("../../models");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 // find all
-// router.get("/", (req, res) => {
-//   Furry.findAll({
-//     // include:[User]
-//   })
-//     .then((dbFurrys) => {
-//       res.json(dbFurrys);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json({ msg: "an error occured", err });
-//     });
-// });
-
-router.get("/", async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
-  try {
-    const furryData = await Furry.findAll({
-      include: [{ model: User }],
+router.get("/", (req, res) => {
+  Furry.findAll({
+    include: [User],
+  })
+    .then((dbFurrys) => {
+      res.json(dbFurrys);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
     });
-    res.status(200).json(furryData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 // find one
