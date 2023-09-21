@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
     const dbFurrys = await Furry.findAll({
       include: [User],
     });
+    console.log(dbFurrys);
     res.json(dbFurrys);
   } catch (err) {
     console.error(err);

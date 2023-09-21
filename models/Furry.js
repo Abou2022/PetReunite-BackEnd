@@ -48,14 +48,17 @@ Furry.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    currentStatus: {
+    petLost: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    // picture: {
-    //   type: DataTypes.STRING,
-    //   //or type: Sequelize.BLOB -- allow null?
-    // },
+    petFound: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    picture: {
+      type: DataTypes.STRING,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
