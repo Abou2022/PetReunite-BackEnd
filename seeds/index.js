@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { User, Furry } = require("../models");
-
+import { cat1 } from "../assets/CatReunite.jpg";
 const sequelize = require("../config/connection");
 
 const users = [
@@ -44,7 +44,7 @@ const furry = [
     petLost: false,
     petFound: true,
     user_id: 1, // This should be a valid user_id
-    // picture: "rex.jpg",
+    picture: cat1,
   },
   {
     name: "Milow",
@@ -59,7 +59,7 @@ const furry = [
     petLost: true,
     petFound: false,
     user_id: 2, // This should be a valid user_id
-    picture: "milow.jpg",
+    picture: "../",
   },
   {
     name: "Piglon",
