@@ -41,7 +41,8 @@ const furry = [
     lastLocation: "Park",
     lastDay: "2023-09-05", // Provide a valid date and time
     lastTime: "10:00:00", // Provide a valid date and time
-    currentStatus: false,
+    petLost: false,
+    petFound: true,
     user_id: 1, // This should be a valid user_id
     // picture: "rex.jpg",
   },
@@ -55,9 +56,10 @@ const furry = [
     lastLocation: "Parking",
     lastDay: "2023-09-05", // Provide a valid date and time
     lastTime: "11:00:00", // Provide a valid date and time
-    currentStatus: true,
+    petLost: true,
+    petFound: false,
     user_id: 2, // This should be a valid user_id
-    // picture: "milow.jpg",
+    picture: "milow.jpg",
   },
   {
     name: "Piglon",
@@ -69,9 +71,10 @@ const furry = [
     lastLocation: "South Park",
     lastDay: "2023-09-06s", // Provide a valid date and time
     lastTime: "09:00:00", // Provide a valid date and time
-    currentStatus: true,
+    petLost: false,
+    petFound: true,
     user_id: 3, // This should be a valid user_id
-    // picture: "milow.jpg",
+    picture: "milow.jpg",
   },
   {
     name: "Bly",
@@ -83,9 +86,10 @@ const furry = [
     lastLocation: "SouthWest Park",
     lastDay: "2023-09-06", // Provide a valid date and time
     lastTime: "09:00:00", // Provide a valid date and time
-    currentStatus: true,
+    petLost: true,
+    petFound: false,
     user_id: 4, // This should be a valid user_id
-    // picture: "milow.jpg",
+    picture: "milow.jpg",
   },
 ];
 
