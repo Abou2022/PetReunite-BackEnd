@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { User, Furry } = require("../models");
-import { cat1 } from "../assets/CatReunite.jpg";
+
 const sequelize = require("../config/connection");
 
 const users = [
@@ -28,6 +28,24 @@ const users = [
     email: "joel@pet.com",
     password: "12345",
   },
+  {
+    userFirstName: "Alfred",
+    userLastName: "Kim",
+    email: "Kiml@fuury.com",
+    password: "12345",
+  },
+  {
+    userFirstName: "Isabella",
+    userLastName: "Kowel",
+    email: "Kowel@fuury.com",
+    password: "12345",
+  },
+  {
+    userFirstName: "Mahaddi",
+    userLastName: "boundi",
+    email: "boundi@fuury.com",
+    password: "12345",
+  },
 ];
 
 const furry = [
@@ -44,7 +62,7 @@ const furry = [
     petLost: false,
     petFound: true,
     user_id: 1, // This should be a valid user_id
-    picture: cat1,
+    picture: "po.gpg",
   },
   {
     name: "Milow",
@@ -59,7 +77,7 @@ const furry = [
     petLost: true,
     petFound: false,
     user_id: 2, // This should be a valid user_id
-    picture: "../",
+    picture: "lap.jpg",
   },
   {
     name: "Piglon",
@@ -89,6 +107,51 @@ const furry = [
     petLost: true,
     petFound: false,
     user_id: 4, // This should be a valid user_id
+    picture: "milow.jpg",
+  },
+  {
+    name: "Flofi",
+    furryDescription: "Small with Big eye",
+    animal: "Bunny",
+    color: "White",
+    breed: "pure Germany Bunny",
+    particularSign: "Blue eye",
+    lastLocation: "New York Central Park",
+    lastDay: "2023-09-20", // Provide a valid date and time
+    lastTime: "10:00:00", // Provide a valid date and time
+    petLost: false,
+    petFound: true,
+    user_id: 5, // This should be a valid user_id
+    picture: "milow.jpg",
+  },
+  {
+    name: "Royal Eagal",
+    furryDescription: "brund feet",
+    animal: "Bird",
+    color: "yellow",
+    breed: "America Focon",
+    particularSign: "black beak",
+    lastLocation: "Bellevue Park",
+    lastDay: "2023-09-21", // Provide a valid date and time
+    lastTime: "01:00:00", // Provide a valid date and time
+    petLost: false,
+    petFound: true,
+    user_id: 6, // This should be a valid user_id
+    picture: "eagle.jpg",
+  },
+  {
+    name: "Lamit",
+    furryDescription: "Lot of furry",
+    animal: "Hamster",
+    color: "White",
+    breed: "pure London Hamster",
+    particularSign: "Blue nose",
+    lastLocation: "Kent Mall Parking",
+    lastDay: "2023-09-23", // Provide a valid date and time
+    lastTime: "10:35:00", // Provide a valid date and time
+    petLost: false,
+    petFound: true,
+    user_id: 7, // This should be a valid user_id
     picture: "milow.jpg",
   },
 ];
