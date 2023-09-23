@@ -46,6 +46,18 @@ const users = [
     email: "boundi@fuury.com",
     password: "12345",
   },
+  {
+    userFirstName: "Laura",
+    userLastName: "white",
+    email: "white@fuury.com",
+    password: "12345",
+  },
+  {
+    userFirstName: "Almac",
+    userLastName: "Isidor",
+    email: "isidor@fuury.com",
+    password: "12345",
+  },
 ];
 
 const furry = [
@@ -82,7 +94,7 @@ const furry = [
   {
     name: "Piglon",
     furryDescription: "Friendly Bonny",
-    animal: "Bonny",
+    animal: "Bunny",
     color: "white gray",
     breed: "not pure",
     particularSign: "None",
@@ -138,6 +150,36 @@ const furry = [
     petFound: true,
     user_id: 6, // This should be a valid user_id
     picture: "eagle.jpg",
+  },
+  {
+    name: "Lamit",
+    furryDescription: "Lot of furry",
+    animal: "Hamster",
+    color: "White",
+    breed: "pure London Hamster",
+    particularSign: "Blue nose",
+    lastLocation: "Kent Mall Parking",
+    lastDay: "2023-09-23", // Provide a valid date and time
+    lastTime: "10:35:00", // Provide a valid date and time
+    petLost: false,
+    petFound: true,
+    user_id: 7, // This should be a valid user_id
+    picture: "milow.jpg",
+  },
+  {
+    name: "Lamit",
+    furryDescription: "Lot of furry",
+    animal: "Hamster",
+    color: "White",
+    breed: "pure London Hamster",
+    particularSign: "Blue nose",
+    lastLocation: "Kent Mall Parking",
+    lastDay: "2023-09-23", // Provide a valid date and time
+    lastTime: "10:35:00", // Provide a valid date and time
+    petLost: false,
+    petFound: true,
+    user_id: 7, // This should be a valid user_id
+    picture: "milow.jpg",
   },
   {
     name: "Lamit",
