@@ -7,14 +7,14 @@ const sequelize = require("./config/connection");
 
 const furryRoutes = require("./routes/api/furryRoutes");
 const userRoutes = require("./routes/api/userRoutes");
-const loginRoutes = require("./routes/api/loginRoutes");
+// const loginRoutes = require("./routes/api/loginRoutes");
 // app.use(routes);
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/furry", furryRoutes);
 app.use("/api/user", userRoutes);
-app.use("/api/login", loginRoutes);
+// app.use("/api/login", loginRoutes);
 
 const corsOptions = {
   origin: "*",
