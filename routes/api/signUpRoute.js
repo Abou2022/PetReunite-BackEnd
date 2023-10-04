@@ -54,3 +54,4 @@ export const signUpRoute = {
     }
   },
 };
+export default signUpRoute;
