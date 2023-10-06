@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const furryRoutes = require("./furryRoutes");
-const { default: signUpRoute } = require("./signUpRoute");
+const signUpRoute = require("./signUpRoute");
 const userRoutes = require("./userRoutes");
 // const loginRoutes = require("./loginRoutes");
 

@@ -1,57 +1,53 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import db from "../../config/connection"; // Import your MySQL connection
+const express = require("express");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const { User } = require("../../models");
 
-export const signUpRoute = {
-  path: "/api/signup",
-  method: "post",
-  handler: async (req, res) => {
+const router = express.Router();
+
+// SignUp Route
+router.post("/", async (req, res) => {
+  try {
     const { email, password } = req.body;
 
-    try {
-      // Check if the user already exists
-      const [rows] = await db.query("SELECT * FROM users WHERE email = ?", [
-        email,
-      ]);
+    // Check if the user already exists
+    const existingUser = await User.findOne({ where: { email } });
 
-      if (rows.length > 0) {
-        return res.sendStatus(409); // User already exists
-      }
-
-      // Hash the password
-      const passwordHash = await bcrypt.hash(password, 10);
-
-      // Insert user into the database
-      const [result] = await db.query(
-        "INSERT INTO users (email, passwordHash, userFirstName, userLastName, isVerified) VALUES (?, ?, '', '', false)",
-        [email, passwordHash]
-      );
-
-      const userId = result.insertId;
-
-      // Create a JWT token
-      jwt.sign(
-        {
-          id: userId,
-          email,
-          info: { userFirstName: "", userLastName: "" },
-          isVerified: false,
-        },
-        process.env.JWT_SECRET,
-        {
-          expiresIn: "2d",
-        },
-        (err, token) => {
-          if (err) {
-            return res.status(500).send(err);
-          }
-          res.status(200).json({ token });
-        }
-      );
-    } catch (error) {
-      console.error("Error in signup:", error);
-      res.status(500).json({ error: "Internal Server Error" });
+    if (existingUser) {
+      return res.sendStatus(409); // User already exists
     }
-  },
-};
-export default signUpRoute;
+
+    // Hash the password
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    // Create a new user in the database
+    const newUser = await User.create({
+      email,
+      passwordHash,
+      userFirstName: "",
+      userLastName: "",
+      isVerified: false,
+    });
+
+    // Create a JWT token
+    const token = jwt.sign(
+      {
+        id: newUser.id,
+        email,
+        info: { userFirstName: "", userLastName: "" },
+        isVerified: false,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "2d",
+      }
+    );
+
+    res.status(200).json({ token });
+  } catch (err) {
+    console.error("Error in signup:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+module.exports = router;
