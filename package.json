@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "🌍 Building innovative solutions to reunite pets with their owners worldwide. 📱 Mobile app and web developer dedicated to making a positive impact on the pet-loving community. 💻 Open-source enthusiast | Coding for a cause | Advancing pet welfare.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "resetdb": "mysql -u root -p <  ./db/schema.sql",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/Abou2022/PetReunite-BackEnd#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",

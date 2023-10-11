@@ -1,6 +1,10 @@
 const express = require("express");
+// import express from "express";
+const mysql = require("mysql");
+import jwt from "jsonwebtoken";
 const app = express();
 const cors = require("cors");
+const bcrypt = require("bcrypt");
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
