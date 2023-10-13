@@ -152,49 +152,49 @@ const furry = [
     picture: "eagle.jpg",
   },
   {
-    name: "Lamit",
+    name: "Roux",
     furryDescription: "Lot of furry",
-    animal: "Hamster",
-    color: "White",
-    breed: "pure London Hamster",
-    particularSign: "Blue nose",
-    lastLocation: "Kent Mall Parking",
+    animal: "Panda",
+    color: "organe",
+    breed: "pure London panda",
+    particularSign: "Black nose",
+    lastLocation: "Everett Mall Parking",
     lastDay: "2023-09-23", // Provide a valid date and time
     lastTime: "10:35:00", // Provide a valid date and time
     petLost: false,
     petFound: true,
     user_id: 7, // This should be a valid user_id
-    picture: "milow.jpg",
+    picture: "pand.jpg",
   },
   {
-    name: "Lamit",
-    furryDescription: "Lot of furry",
-    animal: "Hamster",
+    name: "Pan",
+    furryDescription: "unique color",
+    animal: "Bird",
     color: "White",
-    breed: "pure London Hamster",
-    particularSign: "Blue nose",
-    lastLocation: "Kent Mall Parking",
+    breed: "Africa Pan",
+    particularSign: "none",
+    lastLocation: "Arizona national Park",
     lastDay: "2023-09-23", // Provide a valid date and time
     lastTime: "10:35:00", // Provide a valid date and time
     petLost: false,
     petFound: true,
-    user_id: 7, // This should be a valid user_id
-    picture: "milow.jpg",
+    user_id: 8, // This should be a valid user_id
+    picture: "pan.jpg",
   },
   {
-    name: "Lamit",
-    furryDescription: "Lot of furry",
-    animal: "Hamster",
-    color: "White",
-    breed: "pure London Hamster",
-    particularSign: "Blue nose",
-    lastLocation: "Kent Mall Parking",
+    name: "kaloao",
+    furryDescription: "a lot of furry",
+    animal: "Monkey",
+    color: "Brun",
+    breed: "West Africa Monkey",
+    particularSign: "white face",
+    lastLocation: "New York central Park",
     lastDay: "2023-09-23", // Provide a valid date and time
     lastTime: "10:35:00", // Provide a valid date and time
     petLost: false,
     petFound: true,
-    user_id: 7, // This should be a valid user_id
-    picture: "milow.jpg",
+    user_id: 9, // This should be a valid user_id
+    picture: "kalao.jpg",
   },
 ];
 

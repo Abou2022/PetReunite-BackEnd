@@ -44,6 +44,8 @@ router.post("/", async (req, res) => {
     );
 
     res.status(200).json({ token });
+    // Test my program
+    console.log(res);
   } catch (err) {
     console.error("Error in signup:", err);
     res.status(500).json({ error: "Internal Server Error" });
