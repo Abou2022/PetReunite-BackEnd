@@ -5,8 +5,6 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 
-// import express from "express";
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
