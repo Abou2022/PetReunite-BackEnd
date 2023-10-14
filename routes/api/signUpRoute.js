@@ -14,16 +14,16 @@ router.post("/", async (req, res) => {
     const existingUser = await User.findOne({ where: { email } });
 
     if (existingUser) {
-      return res.sendStatus(409); // User already exists
+      return res.status(409).json({ error: "User already exists" });
     }
 
     // Hash the password
     const passwordHash = await bcrypt.hash(password, 10);
 
-    // Create a new user in the database
+    // Create a new user in the database with placeholders
     const newUser = await User.create({
       email,
-      passwordHash,
+      password: passwordHash,
       userFirstName: "",
       userLastName: "",
       isVerified: false,
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
     // Create a JWT token
     const token = jwt.sign(
       {
-        id: newUser.id,
+        user_id: newUser.id,
         email,
         info: { userFirstName: "", userLastName: "" },
         isVerified: false,
@@ -44,8 +44,6 @@ router.post("/", async (req, res) => {
     );
 
     res.status(200).json({ token });
-    // Test my program
-    console.log(res);
   } catch (err) {
     console.error("Error in signup:", err);
     res.status(500).json({ error: "Internal Server Error" });
