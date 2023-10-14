@@ -11,7 +11,9 @@ router.post("/", async (req, res) => {
     const { email, password } = req.body;
 
     // Check if the user already exists
-    const existingUser = await User.findOne({ where: { email } });
+    const existingUser = await User.findOne({
+      where: { email },
+    });
 
     if (existingUser) {
       return res.status(409).json({ error: "User already exists" });
@@ -35,6 +37,7 @@ router.post("/", async (req, res) => {
         user_id: newUser.id,
         email,
         info: { userFirstName: "", userLastName: "" },
+
         isVerified: false,
       },
       process.env.JWT_SECRET,
