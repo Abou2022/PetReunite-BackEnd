@@ -35,6 +35,8 @@ export const loginRoutes = {
           res.status(200).json({ token });
         }
       );
+    } else {
+      res.sendStatus(401);
     }
   },
 };
