@@ -14,6 +14,12 @@ export const loginRoutes = {
     const { email, password } = req.body;
 
     const db = getDbConnection("petreunite_db");
+
+    const user = await db.collection("users").findOne({ email });
+
+    if (!user) return res.sendStatus(401);
+
+    const { _id: id, isVerified, passwordHash, info } = user;
   },
 };
 // Login Route
