@@ -17,33 +17,29 @@ router.post("/", async (req, res) => {
       return res.sendStatus(404); // User not found
     }
 
-    console.log("Retrieved user", user);
-
     // Compare the hashed password
     const passwordMatch = await bcrypt.compare(password, user.passwordHash);
 
-    if (!passwordMatch) {
-      return res.sendStatus(401); // Unauthorized (password incorrect)
-    }
-
-    // Create a JWT token
-    const token = jwt.sign(
-      {
-        id: user.id,
-        email: user.email,
-        info: {
-          userFirstName: user.userFirstName,
-          userLastName: user.userLastName,
+    if (passwordMatch) {
+      // Create a JWT token and send a response
+      const token = jwt.sign(
+        {
+          id: user.id,
+          email: user.email,
+          info: {
+            userFirstName: user.userFirstName,
+            userLastName: user.userLastName,
+          },
+          isVerified: user.isVerified,
         },
-        isVerified: user.isVerified,
-      },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "2d",
-      }
-    );
+        process.env.JWT_SECRET,
+        { expiresIn: "2d" }
+      );
 
-    res.status(200).json({ token });
+      res.status(200).json({ token });
+    } else {
+      res.sendStatus(401); // Unauthorized (password incorrect)
+    }
   } catch (err) {
     console.error("Error in login:", err);
     res.status(500).json({ error: "Internal Server Error" });
