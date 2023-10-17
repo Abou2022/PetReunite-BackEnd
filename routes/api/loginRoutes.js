@@ -17,6 +17,8 @@ router.post("/", async (req, res) => {
       return res.sendStatus(404); // User not found
     }
 
+    console.log("Retrieved user", user);
+
     // Compare the hashed password
     const passwordMatch = await bcrypt.compare(password, user.passwordHash);
 
