@@ -33,19 +33,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-//new connection
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   dialect: "mysql",
-
-//   password: "",
-//   database: "",
-// });
-
-// app.listen(8081, () => {
-//   console.log("Runing...");
-// });
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
