@@ -5,7 +5,6 @@ class Furry extends Model {}
 
 Furry.init(
   {
-    // add properites here, ex:
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -69,10 +68,6 @@ Furry.init(
   },
   {
     sequelize,
-    // timestamps: false,
-    // freezeTableName: true,
-    // underscored: true,
-    // modelName: "furry",
   }
 );
 

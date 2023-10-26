@@ -39,7 +39,7 @@ User.init(
   {
     hooks: {
       beforeCreate: async (userData) => {
-        userData.password = await bcrypt.hash(userData.password, 10); // Use a higher bcrypt salt round (e.g., 10)
+        userData.password = await bcrypt.hash(userData.password, 10);
         return userData;
       },
     },

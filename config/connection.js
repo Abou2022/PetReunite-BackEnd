@@ -1,6 +1,5 @@
-let sequelize; // Use let instead of const
+let sequelize;
 
-// const { sequelize } = require("sequelize");
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
