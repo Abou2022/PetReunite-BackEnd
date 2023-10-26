@@ -37,7 +37,6 @@ router.post("/", async (req, res) => {
         user_id: newUser.id,
         email,
         info: { userFirstName: "", userLastName: "" },
-
         isVerified: false,
       },
       process.env.JWT_SECRET,
@@ -45,7 +44,6 @@ router.post("/", async (req, res) => {
         expiresIn: "2d",
       }
     );
-
     res.status(200).json({ token });
   } catch (err) {
     console.error("Error in signup:", err);

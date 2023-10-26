@@ -28,7 +28,6 @@ router.get("/:id", async (req, res) => {
 });
 
 // create Furry
-
 router.post("/", async (req, res) => {
   try {
     const userData = await Furry.create(req.body);
