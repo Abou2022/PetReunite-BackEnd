@@ -1,6 +1,3 @@
-//new import
-// const mysql = require("mysql");
-// import jwt from "jsonwebtoken";
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
