@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const { User } = require("../../models");
 
 const router = express.Router();
+router.use(express.json());
 
 // SignUp Route
 router.post("/", async (req, res) => {
@@ -36,6 +37,7 @@ router.post("/", async (req, res) => {
       {
         user_id: newUser.id,
         email,
+        // password,
         info: { userFirstName: "", userLastName: "" },
         isVerified: false,
       },

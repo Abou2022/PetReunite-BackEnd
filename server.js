@@ -17,8 +17,8 @@ const loginRoutes = require("./routes/api/loginRoutes");
 // app.use(routes);
 
 app.use(cors());
-// app.use(express.json()); //new
-// app.use(cookieParser()); //new
+app.use(express.json()); //new
+app.use(cookieParser()); //new
 app.use("/api/furry", furryRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/signup", signUpRoute);
