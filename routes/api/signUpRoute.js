@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     });
 
     if (existingUser) {
-      return res.status(409).json({ error: "User already exists" });
+      return res.status(409);
     }
 
     // Hash the password
