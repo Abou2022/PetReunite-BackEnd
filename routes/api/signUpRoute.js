@@ -27,8 +27,8 @@ router.post("/", async (req, res) => {
     const newUser = await User.create({
       email,
       password: passwordHash,
-      userFirstName: "",
-      userLastName: "",
+      userFirstName,
+      userLastName,
       isVerified: false,
     });
 
@@ -37,8 +37,7 @@ router.post("/", async (req, res) => {
       {
         user_id: newUser.id,
         email,
-        // password,
-        info: { userFirstName: "", userLastName: "" },
+        info: { userFirstName, userLastName },
         isVerified: false,
       },
       process.env.JWT_SECRET,
