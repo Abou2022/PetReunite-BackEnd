@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
       return res.status(409);
     }
 
-    // Hash the password
     const passwordHash = await bcrypt.hash(password, 10);
 
     // Create a new user in the database with placeholders
