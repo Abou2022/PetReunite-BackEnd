@@ -11,7 +11,6 @@ router.post("/", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check if the user already exists
     const existingUser = await User.findOne({
       where: { email },
     });
@@ -31,7 +30,6 @@ router.post("/", async (req, res) => {
       isVerified: false,
     });
 
-    // Create a JWT token
     const token = jwt.sign(
       {
         user_id: newUser.id,
